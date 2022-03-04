@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+     <script>
+       let userPlay = 'scissors';
+         do {
+            userPlay = prompt("rock, paper, or scissors?");
+        }
+        while (userPlay !== "rock" && userPlay !== "paper" && userPlay !== "scissors"); //prompt user for rock, scissors, or paper.
+
+        let computerSelection = computerPlay();
+
+        function computerPlay() { //computer generates a random answer.
+            let random = ["rock", "paper", "scissors"];
+            return random[Math.floor(Math.random() * 3)];
+
+        }
+        function playRound(playerSelection, computerSelection) { //plays a round of the game.
+            if (playerSelection === "rock") {
+                if (computerSelection === "rock") {
+                    return "Draw!";
+                } else if (computerSelection === "paper") {
+                    return "You lose! Paper beats rock.";
+                } else {
+                    return "You win! Rock beats scissors.";
+                }
+            } else if (playerSelection === "paper") {
+                if (computerSelection === "rock") {
+                    return "You win! Paper beats rock.";
+                } else if (computerSelection === "paper") {
+                    return "Draw!";
+                } else {
+                    return "You lose! Scissors beats paper.";
+                }
+            } else {
+                if (computerSelection === "rock") {
+                    return "You lose! Rock beats scissors.";
+                } else if (computerSelection === "paper") {
+                    return "You win! Scissors beats paper.";
+                } else {
+                    return "Draw!";
+                }
+            }
+        }
+
+        console.log(playRound(userPlay, computerSelection));
+     </script>       
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+
+.display-moves{
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.options:hover{
+  box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.7),
+  0 6px 20px 0 rgba(255, 0, 0, 0.19);
+}
+
+.move {
+  border-radius: 50%;
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.7);
+}
+
+.separator {
+  font-size: 5em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*# sourceMappingURL=style.css.map */

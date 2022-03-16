@@ -1,63 +1,48 @@
-<!-- https://sebhastian.com/rock-paper-scissors-javascript/ -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-</head>
-<body>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
     <h1>Rock Paper Scissors</h1>
-    <button class="options">Rock</button>
-    <button class="options">Paper</button>
-    <button class="options">Scissors</button>
-    <p></p>
-      <script>
-          const options = document.querySelectorAll(".options");
-
-          options.forEach((option) => {
-              option.addEventListener("click", function(){
-
-              });
-          });
-
-        let computerSelection = computerPlay();
-
-        function computerPlay() { //computer generates a random answer.
-            let random = ["rock", "paper", "scissors"];
-            return random[Math.floor(Math.random() * 3)];
-        } 
-
-        function playRound(playerSelection, computerSelection) { //plays a round of the game.
-            if (playerSelection === "rock") {
-                if (computerSelection === "rock") {
-                    return "Draw!";
-                } else if (computerSelection === "paper") {
-                    return "You lose! Paper beats rock.";
-                } else {
-                    return "You win! Rock beats scissors.";
-                }
-            } else if (playerSelection === "paper") {
-                if (computerSelection === "rock") {
-                    return "You win! Paper beats rock.";
-                } else if (computerSelection === "paper") {
-                    return "Draw!";
-                } else {
-                    return "You lose! Scissors beats paper.";
-                }
-            } else {
-                if (computerSelection === "rock") {
-                    return "You lose! Rock beats scissors.";
-                } else if (computerSelection === "paper") {
-                    return "You win! Scissors beats paper.";
-                } else {
-                    return "Draw!";
-                }
-            }
-        }
-
-        console.log(playRound(userPlay, computerSelection));
-     </script>   
-</body>
+    <h2>Win 5 rounds to with the game of Rock Paper Scissors!</h2>
+    <h2>
+      Player <span id="p-score">0</span> - <span id="c-score">0</span>Computer
+    </h2>
+    <div class="display-moves">
+      <div class="moves">
+        <img id="p-move" src="images/Paper.svg" />
+      </div>
+      <div class="separator"><strong>VS</strong></div>
+      <div class="moves">
+        <img id="c-move" src="images/Paper.svg" />
+      </div>
+    </div>
+    <h2>Select the image below to select your move</h2>
+    <div class="action">
+      <input
+        class="options"
+        type="image"
+        src="./images/Paper.svg"
+        value="Paper"
+      />
+      <input
+        class="options"
+        type="image"
+        src="./images/Rock.svg"
+        value="Rock"
+      />
+      <input
+        class="options"
+        type="image"
+        src="./images/Scissors.svg"
+        value="Scissors"
+      />
+    </div>
+  </body>
 </html>

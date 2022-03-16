@@ -1,3 +1,4 @@
+<!-- https://sebhastian.com/rock-paper-scissors-javascript/ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,20 +8,27 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-     <script>
-       let userPlay = 'scissors';
-         do {
-            userPlay = prompt("rock, paper, or scissors?");
-        }
-        while (userPlay !== "rock" && userPlay !== "paper" && userPlay !== "scissors"); //prompt user for rock, scissors, or paper.
+    <h1>Rock Paper Scissors</h1>
+    <button class="options">Rock</button>
+    <button class="options">Paper</button>
+    <button class="options">Scissors</button>
+    <p></p>
+      <script>
+          const options = document.querySelectorAll(".options");
+
+          options.forEach((option) => {
+              option.addEventListener("click", function(){
+
+              });
+          });
 
         let computerSelection = computerPlay();
 
         function computerPlay() { //computer generates a random answer.
             let random = ["rock", "paper", "scissors"];
             return random[Math.floor(Math.random() * 3)];
+        } 
 
-        }
         function playRound(playerSelection, computerSelection) { //plays a round of the game.
             if (playerSelection === "rock") {
                 if (computerSelection === "rock") {
@@ -50,6 +58,6 @@
         }
 
         console.log(playRound(userPlay, computerSelection));
-     </script>       
+     </script>   
 </body>
 </html>
